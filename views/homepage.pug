@@ -1,0 +1,20 @@
+doctype html
+html 
+    head 
+        title Homepage
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body    
+        h1 Makup Products
+        a(href="/update-cobj") Add Makup Products
+        table
+          thead
+            th Makeup Item
+            th Makeup Brand
+            th Makeup Price
+          tbody   
+            each contact in records
+                tr
+                    td #{contact.properties.makeup_item} 
+                    td #{contact.properties.makeup_brand}
+                    td #{contact.properties.makeup_price}
