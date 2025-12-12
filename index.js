@@ -21,12 +21,58 @@ app.get("/", async (req, res) => {
 });
 
 app.get("/update-cobj", async (req, res) => {
-  
+  res.render("updates");
 });
 
-app.post('/update-cobj', async (req, res) => {
+app.post("/update-cobj", async (req, res) => {
+  const { makeup_item, makeup_brand, makeup_price } = req.body;
 
+  const data = {
+    properties: {
+      makeup_item: makeup_item,
+      makeup_brand: makeup_brand,
+      makeup_price: makeup_price,
+    },
+  };
+  try {
+    const response = await axios.post(
+      "https://api.hubspot.com/crm/v3/objects/2-222472662",
+      data,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.PRIVATE_APP_ACCESS}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    console.log("Custom Object Added:", response.data);
+
+     res.redirect("/");
+  } catch (error) {
+    console.error("Error Fetching Custom objects", error);
+  }
 });
+
+
+/** 
+* * This is sample code to give you a reference for how you should structure your calls. 
+
+* * App.get sample
+app.get('/contacts', async (req, res) => {
+    const contacts = 'https://api.hubspot.com/crm/v3/objects/contacts';
+    const headers = {
+        Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
+        'Content-Type': 'application/json'
+    }
+    try {
+        const resp = await axios.get(contacts, { headers });
+        const data = resp.data.results;
+        res.render('contacts', { title: 'Contacts | HubSpot APIs', data });      
+    } catch (error) {
+        console.error(error);
+    }
+});
+*/
 
 
 // * Localhost

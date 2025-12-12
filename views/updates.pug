@@ -1,0 +1,24 @@
+doctype html
+html 
+    head 
+        title= "Update Custom Object Form | Integrating With HubSpot I Practicum."
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        div.main-wrapper       
+            h1 Add New Makeup Item
+            a(href="/").button Return to the homepage
+            form.form-wrapper(action="/update-cobj" method="POST")
+                div.row
+                       
+                        input(type="text" id="makeup_item" name="makeup_item" required placeholder="Makup Item")
+                        br
+                div.row
+                       
+                        input(type="text" id="makeup_brand" name="makeup_brand" required placeholder="Makeup Brand")
+                        br
+                div.row                
+                        input(type="number" id="makeup_price" name="makeup_price" required placeholder="Makeup Price")  
+                        br          
+                button(type="submit") Submit
+        
