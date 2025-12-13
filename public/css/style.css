@@ -1,58 +1,127 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-body, * {
+body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    background: #f5f6fa;
+    text-align: center;
 }
 
 h1 {
-    margin: 1rem;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #333;
+  font-family: serif;
 }
 
-.cards {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+a {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #884379;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 15px;
+   border: 1px solid #884379;
+   transition: all 0.3s ease;
 }
 
-.card {
-    flex-basis: 31%;
-    margin: 1rem 0.4rem;
-    padding: 1rem 0.4rem 2.5rem 0.4rem;
-    border: solid 1px lightgrey;
-    border-radius: 15px;
-    box-shadow: 3px 2px 6px lightgrey;
+a:hover {
+   color: #884379;
+   background-color:transparent;
 }
 
-.card__email {
-    font-size: 1rem;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  max-width: 800px;
+  margin: 0 auto;
 }
+
+thead th {
+  background: #884379;
+  color: #fff;
+  padding: 14px;
+  text-align: left;
+  font-size: 16px;
+}
+
+tbody td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ebebeb;
+  font-size: 15px;
+  color: #333;
+  text-align: left;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: #f0f7ff;
+}
+
+.button,
+button[type="submit"] {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #884379;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 20px;  
+  font-size: 14px;
+  border: 1px solid #884379;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.button:hover,
+button[type="submit"]:hover {
+  color: #884379;
+  background-color:transparent;
+}
+
+.main-wrapper {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 30px 35px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
 
 .form-wrapper {
-    font-size: 18px;
-    max-width: 768px;
-    margin: 2rem auto;
-    padding: 2rem;
-    border: solid 1px lightgrey;
-    border-radius: 15px;
-    box-shadow: 3px 2px 6px lightgrey;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* spacing between fields */
 }
 
-label, input {
-    margin-top: 5px;
-    display: block;
-    font-size: inherit;
+.row {
+  display: flex;
+  flex-direction: column;
 }
 
-input[type="text"] {
-    padding: .25rem;
+.form-wrapper input {
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  background: #f7f9fc;
+  transition: border-color 0.3s ease;
 }
 
-input[type="submit"] {
-    background-color: lightgrey;
-    border: none;
-    padding: .375rem 1rem;
-    margin-top: 10px;
+.form-wrapper input:focus {
+  border-color: #884379;
+  outline: none;
+  background: #fff;
 }
